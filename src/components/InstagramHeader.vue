@@ -103,7 +103,7 @@ justify-content: space-between;
     padding: 0.5rem 5rem;
   }
   .logo img {
-    height: 40px;
+    height: 50px;
   }
   .search {
     width: 150px;
@@ -128,7 +128,7 @@ justify-content: space-between;
   }
   .logo img {
     margin-left: 0.2rem;
-    height: 40px;
+    height: 50px;
   }
   .search {
     visibility: hidden;
