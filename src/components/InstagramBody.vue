@@ -1,67 +1,68 @@
 <template>
-    <div>
-      <div v-for="(post, index) in posts" :key="index" class="body">
-        <!-- Post Header -->
-        <div class="profile">
-          <div class="profileinfo">
-            <img :src="post.userImage" alt="Profile" class="pimage" />
-            <div>
-              <p class="username">{{ post.username }}</p>
-              <p class="location">{{ post.location }}</p>
-            </div>
-          </div>
-          <i class="fas fa-ellipsis-h cursor-pointer text-gray-500 icon"></i>
-        </div>
-  
-        <!-- Post Image -->
-        <img :src="post.image" alt="Post Image" class="image" loading="lazy" />
-  
-        <!-- Actions -->
-        <div class="icons">
-          <div class="iconic">
-            <i 
-              :class="post.liked ? 'fas fa-heart text-red-500' : 'far fa-heart'" 
-              class="text-2xl cursor-pointer icon1"
-              @click="toggleLike(index)"
-            ></i>
-            <i class="far fa-comment text-2xl cursor-pointer icon2" @click="toggleComments(index)"></i>
-            <i class="far fa-paper-plane text-2xl cursor-pointer icon3"></i>
-          </div>
-          <i class="far fa-bookmark text-2xl cursor-pointer"></i>
-        </div>
-  
-        <!-- Likes -->
-        <p class="likes">{{ post.likes }} likes</p>
-  
-        <!-- Caption -->
-        <div class="caption">
-          <p class="captiontext">
-            <span class="captioninfo">{{ post.username }}</span> {{ post.caption }}
-          </p>
-          <p v-if="post.comments.length" class="viewcomments" @click="toggleComments(index)">
-            View all {{ post.comments.length }} comments
-          </p>
-        </div>
-  
-        <!-- Comments -->
-        <div v-if="post.showComments" class="comments-section">
-          <div v-for="(comment, idx) in post.comments" :key="idx" class="comment">
-            <span class="font-semibold">{{ comment.username }}</span> {{ comment.comment }}
+  <div>
+    <div v-for="(post, index) in posts" :key="index" class="body">
+      <!-- Post Header -->
+      <div class="profile">
+        <div class="profileinfo">
+          <img :src="post.userImage" alt="Profile picture of {{ post.username }}" class="pimage" />
+          <div>
+            <p class="username" aria-label="Username: {{ post.username }}">{{ post.username }}</p>
+            <p class="location" aria-label="Location: {{ post.location }}">{{ post.location }}</p>
           </div>
         </div>
-  
-        <!-- Add Comment -->
-        <div class="addcomment">
-          <i class="far fa-smile text-xl text-gray-500 icon5"></i>
-          <input type="text" v-model="newComment[index]" placeholder="Add a comment..." class="commenttext" />
-          <div class="post" @click="addComment(index)">Post</div>
+        <i class="fas fa-ellipsis-h cursor-pointer text-gray-500 icon" aria-label="More options"></i>
+      </div>
+
+      <!-- Post Image -->
+      <img :src="post.image" alt="Post image" class="image" loading="lazy" aria-label="User post" />
+
+      <!-- Actions -->
+      <div class="icons" aria-label="Post actions">
+        <div class="iconic">
+          <i 
+            :class="post.liked ? 'fas fa-heart text-red-500' : 'far fa-heart'" 
+            class="text-2xl cursor-pointer icon1"
+            @click="toggleLike(index)"
+            :aria-label="post.liked ? 'Unlike post' : 'Like post'"
+          ></i>
+          <i class="far fa-comment text-2xl cursor-pointer icon2" @click="toggleComments(index)" aria-label="View comments"></i>
+          <i class="far fa-paper-plane text-2xl cursor-pointer icon3" aria-label="Share post"></i>
+        </div>
+        <i class="far fa-bookmark text-2xl cursor-pointer" aria-label="Save post"></i>
+      </div>
+
+      <!-- Likes -->
+      <p class="likes" aria-label="{{ post.likes }} likes">{{ post.likes }} likes</p>
+
+      <!-- Caption -->
+      <div class="caption">
+        <p class="captiontext">
+          <span class="captioninfo" aria-label="Caption by {{ post.username }}">{{ post.username }}</span> {{ post.caption }}
+        </p>
+        <p v-if="post.comments.length" class="viewcomments" @click="toggleComments(index)" aria-label="View all {{ post.comments.length }} comments">
+          View all {{ post.comments.length }} comments
+        </p>
+      </div>
+
+      <!-- Comments -->
+      <div v-if="post.showComments" class="comments-section" aria-label="Comments section">
+        <div v-for="(comment, idx) in post.comments" :key="idx" class="comment">
+          <span class="font-semibold" aria-label="Comment by {{ comment.username }}">{{ comment.username }}</span> {{ comment.comment }}
         </div>
       </div>
-      
-      <div ref="scrollTrigger" class="loading">Loading more posts...</div>
+
+      <!-- Add Comment -->
+      <div class="addcomment" aria-label="Add a comment section">
+        <i class="far fa-smile text-xl text-gray-500 icon5" aria-label="Add emoji"></i>
+        <input type="text" v-model="newComment[index]" placeholder="Add a comment..." class="commenttext" aria-label="Write a comment" />
+        <div class="post" @click="addComment(index)" aria-label="Post comment">Post</div>
+      </div>
     </div>
-  </template>
-  
+    
+    <div ref="scrollTrigger" class="loading" aria-label="Loading more posts">Loading more posts...</div>
+  </div>
+</template>
+
   <script>
   export default {
     data() {
@@ -198,11 +199,22 @@
       margin-right: 0.8rem;
   }
 
+  .icon1:hover, .icon2:hover, .icon3:hover {
+      transition: ease-in-out 0.3s;
+      transform: scale(1.1);
+  }
+
+  .icon1:active, .icon2:active, .icon3:active {
+      transition: ease-in-out 0.3s;
+      transform: scale(2.1);
+  }
+
   .likes {
       font-weight: 600;
       padding: 0rem 1rem;
       cursor: pointer;
   }
+  
 
   .caption {
       padding: 0rem 1rem;

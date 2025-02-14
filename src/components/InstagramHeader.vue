@@ -14,12 +14,18 @@
       
       <!-- Navigation Icons -->
       <div class="right">
-        <font-awesome-icon :icon="['fas', 'home']" class="icons" />
-        <i class="far fa-paper-plane text-xl cursor-pointer, icons"></i>
-        <i class="far fa-compass text-xl cursor-pointer, icons"></i>
-        <i class="far fa-heart text-xl cursor-pointer, icons"></i>
-        <img src="../assets/pb.jpg" class="profile" alt="Profile" />
-      </div>
+  <font-awesome-icon :icon="['fas', 'home']" class="icons" />
+  <i class="far fa-paper-plane text-xl cursor-pointer icons"></i>
+  <!-- <i class="far fa-compass text-xl cursor-pointer icons"></i> -->
+
+  <!-- Boxed Cross Icon -->
+  <i class="far fa-plus-square text-xl cursor-pointer icons"></i>
+
+
+  <i class="far fa-heart text-xl cursor-pointer icons"></i>
+  <img src="../assets/pb.jpg" class="profile" alt="Profile" />
+</div>
+
     </header>
   </template>
 
