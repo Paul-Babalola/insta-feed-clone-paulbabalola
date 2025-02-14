@@ -28,7 +28,7 @@
           <i class="far fa-comment text-2xl cursor-pointer icon2" @click="toggleComments(index)" aria-label="View comments"></i>
           <i class="far fa-paper-plane text-2xl cursor-pointer icon3" aria-label="Share post"></i>
         </div>
-        <i class="far fa-bookmark text-2xl cursor-pointer" aria-label="Save post"></i>
+        <i class="far fa-bookmark text-2xl cursor-pointer icon4" aria-label="Save post"></i>
       </div>
 
       <!-- Likes -->
@@ -107,7 +107,7 @@
             userImage: require("@/assets/pic.jpg"),
             username: "Ryan Reynolds",
             location: "Abuja, Nigeria",
-            image: require("@/assets/hp.png"),
+            image: require("@/assets/shine.png"),
             likes: 950,
             caption: "Another great day!",
             comments: [],
@@ -187,6 +187,7 @@
       justify-content: space-between;
       font-size: 1.5rem;
       cursor: pointer;
+      margin-top: 1rem;
   }
 
   .iconic {
