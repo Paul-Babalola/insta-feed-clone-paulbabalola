@@ -73,7 +73,7 @@ justify-content: space-between;
 
 @media (max-width: 1024px) {
   .top {
-    padding: 0.5rem 7.7rem;
+    padding: 0.5rem 7rem;
   }
   .search {
     margin-left: -40%;
@@ -118,18 +118,20 @@ justify-content: space-between;
 /* Small Phones (Portrait Mode) */
 @media (max-width: 480px) {
   .top {
-    padding: 0.5rem 3rem;
+    padding: 0.5rem 2.4rem;
   }
   .logo img {
+    margin-left: 0.2rem;
     height: 40px;
   }
   .search {
+    visibility: hidden;
     margin-left: 1rem;
     width: 120px;
   }
   .profile {
+    margin-left: -10rem;
     height: 28px;
-   margin-right: 1rem;
     width: 28px;
   }
   .icons {
@@ -141,7 +143,7 @@ justify-content: space-between;
 /* Extra Small Phones */
 @media (max-width: 375px) {
   .top {
-    padding: 0.5rem;
+    padding: 0.5rem 2.2rem;
   }
   .search {
     width: 100px;

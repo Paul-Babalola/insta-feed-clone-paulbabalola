@@ -122,6 +122,7 @@
     .stories-container{
         width: 100%;
     margin: 2rem auto;
+    margin-top: 4rem;
   }
 
     .stories {
