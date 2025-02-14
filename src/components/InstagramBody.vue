@@ -14,7 +14,7 @@
         </div>
   
         <!-- Post Image -->
-        <img :src="post.image" alt="Post Image" class="image" />
+        <img :src="post.image" alt="Post Image" class="image" loading="lazy" />
   
         <!-- Actions -->
         <div class="icons">
