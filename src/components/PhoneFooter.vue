@@ -28,7 +28,7 @@
   align-items: center;
   padding: 1.2rem 1rem;
   border-bottom: 1px solid #dbdbdb;
-  margin-top: 34rem;
+  margin-top: 194%;
   visibility: hidden;
 }
 
@@ -47,9 +47,8 @@ justify-content: space-evenly;
   width: 80%;
 }
 
-@media (max-width: 480px) {
+@media (min-width: 376px) and (max-width: 480px) {
   .top {
-    margin-top: 128%;
     visibility: visible;
   }
 
@@ -58,7 +57,6 @@ justify-content: space-evenly;
 
 @media (max-width: 375px) {
   .top {
-    margin-top: 34rem;
     visibility: visible;
   }
 
