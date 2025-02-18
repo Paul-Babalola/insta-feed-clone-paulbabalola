@@ -19,16 +19,16 @@
 <style scoped>
 .top {
   position: fixed;
-  top: 0;
+  bottom:  0;
+  left: 0;
   width: 100%;
-  height: 1%;
+  height: 30px;
   z-index: 1000;
   background-color: white;
   display: flex;
   align-items: center;
   padding: 1.2rem 1rem;
-  border-bottom: 1px solid #dbdbdb;
-  margin-top: 194%;
+  border-top: 1px solid #dbdbdb;
   visibility: hidden;
 }
 
